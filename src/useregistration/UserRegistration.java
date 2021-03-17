@@ -14,8 +14,10 @@ public class UserRegistration
         validEmail();
         //calling method to validate Mobile No
         validMobileNo();
-        //calling method to validate Password
+        //calling method to validate Password rule1
         validPassword();
+        //calling method to validate Password rule2
+        passwordAtLeastOneUpperCase();
     }
     //Define method to validate first name
     public static void validateUserData()
@@ -96,6 +98,23 @@ public class UserRegistration
 
         System.out.println("The Password is: " + name);
         String pattern =  "^[A-Za-z0-9]{8,}$";
+        if( name.matches(pattern))
+        {
+            System.out.println("Name is Valid");
+        }
+        else
+        {
+            System.out.println("Name is Invalid");
+        }
+    }
+    //Define method to validate Password At least One UpperCase
+    public static void passwordAtLeastOneUpperCase()
+    {
+        System.out.println("Enter Your Password.");
+        String name = scan.nextLine();
+
+        System.out.println("The Password is: " + name);
+        String pattern =  "^(.*[A-Z]{1}[A-Za-z0-9]{7,})$";
         if( name.matches(pattern))
         {
             System.out.println("Name is Valid");
