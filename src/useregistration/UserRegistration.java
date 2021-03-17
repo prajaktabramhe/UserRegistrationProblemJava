@@ -16,12 +16,7 @@ public class UserRegistration
         validMobileNo();
         //calling method to validate Password rule1
         validPassword();
-        //calling method to validate Password rule2
-        passwordAtLeastOneUpperCase();
-        //calling method to validate Password rule3
-        validateAlteastOneNumber();
-        //calling method to validate Password rule4
-        validateSpecialCharacter();
+
     }
     //Define method to validate first name
     public static void validateUserData()
@@ -65,7 +60,7 @@ public class UserRegistration
         String name = scan.nextLine();
 
         System.out.println("The Email is: " + name);
-        String pattern = "^[a-zA-Z0-9]+([.+-_][a-zA-Z0-9]+)*@[a-zA-z0-9]+.[a-zA-Z]{2}([.][a-zA-Z]{2,4}){0,1}$";
+        String pattern = "^([a-z]{3,})([\'.\'-\'+]{0,1}[a-z0-9]*)@([a-z]{1,4}).([a-z]{2,3})(^[.]{0,1}[a-z]{2,3}){0,1}$";
         if( name.matches(pattern))
         {
             System.out.println("Name is Valid");
@@ -101,24 +96,7 @@ public class UserRegistration
         String name = scan.nextLine();
 
         System.out.println("The Password is: " + name);
-        String pattern =  "^[A-Za-z0-9]{8,}$";
-        if( name.matches(pattern))
-        {
-            System.out.println("Name is Valid");
-        }
-        else
-        {
-            System.out.println("Name is Invalid");
-        }
-    }
-    //Define method to validate Password At least One UpperCase
-    public static void passwordAtLeastOneUpperCase()
-    {
-        System.out.println("Enter Your Password.");
-        String name = scan.nextLine();
-
-        System.out.println("The Password is: " + name);
-        String pattern =  "^(.*[A-Z]{1}[A-Za-z0-9]{7,})$";
+        String pattern =  "^(.*[A-Z]{1,}.*[0-9]{1,}.*[~!@#$%^&*]?[A-Za-z0-9]{5,})$";
         if( name.matches(pattern))
         {
             System.out.println("Name is Valid");
@@ -129,38 +107,4 @@ public class UserRegistration
         }
     }
 
-    //Define method to validate Password At least One Numeric number
-    public static void validateAlteastOneNumber()
-    {
-        System.out.println("Enter Your Password.");
-        String name = scan.nextLine();
-
-        System.out.println("The Password is: " + name);
-        String pattern = "^(.*[A-Z]{1,}[0-9]{1,}[A-Za-z0-9]{6,})$";
-        if( name.matches(pattern))
-        {
-            System.out.println("Name is Valid");
-        }
-        else
-        {
-            System.out.println("Name is Invalid");
-        }
-    }
-
-    public static void validateSpecialCharacter()
-    {
-        System.out.println("Enter Your Password.");
-        String name = scan.nextLine();
-
-        System.out.println("The Password is: " + name);
-        String pattern = "^(.*[A-Z]{1,}.*[0-9]{1,}.*[~!@#$%^&*]?[A-Za-z0-9]{5,})$";
-        if( name.matches(pattern))
-        {
-            System.out.println("Name is Valid");
-        }
-        else
-        {
-            System.out.println("Name is Invalid");
-        }
-    }
 }
